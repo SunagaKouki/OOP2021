@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DistanceConverter {
-    //インチとメートルの単位変換クラス、静的クラス
-    public static class FeetConverter {
-        private const double ratio = 0.3048;
+namespace Exercise2 {
+    //フィートとメートルの単位変換クラス
+    public static class InchConverter {
+        private const double ratio = 0.0254;
 
         //メートルからフィートを求める
         public static double FromMeter(double meter) {
