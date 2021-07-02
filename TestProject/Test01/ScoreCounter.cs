@@ -11,7 +11,7 @@ namespace Test01 {
         }
 
 
-        //メソッドの概要： 点数データを読み込み、studentオブジェクトのリストを返す
+        //メソッドの概要： 生徒データを読み込み、studentオブジェクトのリストを返す
         private static IEnumerable<Student> ReadScore(string filePath) {
             //生徒ごとの点数データを入れるリストオブジェクトを生成
             List<Student> students = new List<Student>();

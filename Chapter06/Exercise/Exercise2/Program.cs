@@ -1,0 +1,102 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exercise2 {
+
+    class Book {
+        public string Title { get; set; }
+        public int Price { get; set; }
+        public int Pages { get; set; }
+    }
+
+    class Program {
+        static void Main(string[] args) {
+            var books = new List<Book> {
+               new Book { Title = "C#プログラミングの新常識", Price = 3800, Pages = 378 },
+               new Book { Title = "ラムダ式とLINQの極意", Price = 2500, Pages = 312 },
+               new Book { Title = "ワンダフル・C#ライフ", Price = 2900, Pages = 385 },
+               new Book { Title = "一人で学ぶ並列処理プログラミング", Price = 4800, Pages = 464 },
+               new Book { Title = "フレーズで覚えるC#入門", Price = 5300, Pages = 604 },
+               new Book { Title = "私でも分かったASP.NET MVC", Price = 3200, Pages = 453 },
+               new Book { Title = "楽しいC#プログラミング教室", Price = 2540, Pages = 348 },
+            };
+
+            #region テスト用ドライバ
+            Exercise2_1(books);
+            Console.WriteLine("-----");
+
+            Exercise2_2(books);
+
+            Console.WriteLine("-----");
+
+            Exercise2_3(books);
+            Console.WriteLine("-----");
+
+            Exercise2_4(books);
+            Console.WriteLine("-----");
+
+            Exercise2_5(books);
+            Console.WriteLine("-----");
+
+            Exercise2_6(books);
+
+            Console.WriteLine("-----");
+
+            Exercise2_7(books);
+            #endregion
+        }
+
+        //タイトルがワンダフル・C#ライフの書籍の価格とページ数を表示
+        private static void Exercise2_1(List<Book> books) {
+            var book = books.FirstOrDefault(b => b.Title == "ワンダフル・C#ライフ");
+            if (book != null) {
+                Console.WriteLine("{0} {1}", book.Price, book.Pages);
+            }
+        }
+
+        //タイトルにC#が含まれている書籍の数
+        private static void Exercise2_2(List<Book> books) {
+            int count = books.Count(b => b.Title.Contains("C#"));
+            Console.WriteLine(count);
+        }
+
+        //タイトルにC#が含まれている書籍の平均ページ
+        private static void Exercise2_3(List<Book> books) {
+            var average = books.Where(b => b.Title.Contains("C#")).Average(b => b.Pages);
+            Console.WriteLine(average);
+        }
+
+        //価格が4000円以上の最初に見つかった書籍のタイトル
+        private static void Exercise2_4(List<Book> books) {
+            var book = books.FirstOrDefault(b => b.Price >= 4000);
+            if (book != null) {
+                Console.WriteLine(book.Title);
+            }
+        }
+
+        //価格が4000円未満の最大ページ数
+        private static void Exercise2_5(List<Book> books) {
+            var book = books.Where(b => b.Price < 4000).Max(b => b.Pages);
+            Console.WriteLine(book);
+        }
+
+        //ページ数が400ページ以上かつ価格の高い順
+        private static void Exercise2_6(List<Book> books) {
+            var book = books.Where(b => b.Pages >= 400).OrderByDescending(b => b.Price);
+            foreach (var b in book) {
+                Console.WriteLine("{0},{1}",b.Title,b.Price);
+            }
+        }
+
+        //タイトルにC#が含まれていてかつ500ページ以下の本のタイトルを表示
+        private static void Exercise2_7(List<Book> books) {
+            var book = books.Where(b => b.Title.Contains("C#")).Where(b => b.Pages <= 500);
+            foreach (var b in book) {
+                Console.WriteLine(b.Title);
+            }
+        }
+    }
+}

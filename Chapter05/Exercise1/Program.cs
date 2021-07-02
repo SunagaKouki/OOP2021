@@ -9,7 +9,9 @@ namespace Exercise1 {
         static void Main(string[] args) {
 #if false
             #region 問題5.1
+            Console.Write("文字入力：");
             var s1 = Console.ReadLine();
+            Console.Write("文字入力：");
             var s2 = Console.ReadLine();
 
             if (String.Compare(s1,s2,ignoreCase:true) == 0) {
@@ -19,11 +21,17 @@ namespace Exercise1 {
             }
             #endregion
 #endif
-#if true
+#if false
             #region 問題5.2
+            int num;
+            Console.Write("数値入力：");
             var Num = Console.ReadLine();
 
-            int num = int.Parse(Num);
+            if (int.TryParse(Num, out num)) {
+                Console.WriteLine(num.ToString("#,#"));
+            } else {
+                Console.WriteLine("数値文字列ではありません");
+            }
             #endregion
 #endif
         }
