@@ -24,12 +24,14 @@ namespace Exercise2 {
         /// コード エディターで変更しないでください。
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.lbTimerDisp = new System.Windows.Forms.Label();
             this.btStartDisp = new System.Windows.Forms.Button();
             this.btStopDIsp = new System.Windows.Forms.Button();
             this.btCleanDIsp = new System.Windows.Forms.Button();
             this.btLapDIsp = new System.Windows.Forms.Button();
-            this.lbLap = new System.Windows.Forms.Label();
+            this.tmpict = new System.Windows.Forms.Timer(this.components);
+            this.lbLap = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lbTimerDisp
@@ -87,14 +89,17 @@ namespace Exercise2 {
             this.btLapDIsp.UseVisualStyleBackColor = true;
             this.btLapDIsp.Click += new System.EventHandler(this.btLapDIsp_Click);
             // 
+            // tmpict
+            // 
+            // 
             // lbLap
             // 
-            this.lbLap.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lbLap.Location = new System.Drawing.Point(235, 13);
+            this.lbLap.FormattingEnabled = true;
+            this.lbLap.ItemHeight = 12;
+            this.lbLap.Location = new System.Drawing.Point(235, 9);
             this.lbLap.Name = "lbLap";
-            this.lbLap.Size = new System.Drawing.Size(121, 159);
+            this.lbLap.Size = new System.Drawing.Size(121, 160);
             this.lbLap.TabIndex = 5;
-            this.lbLap.Text = "lbLap";
             // 
             // Form1
             // 
@@ -122,7 +127,8 @@ namespace Exercise2 {
         private System.Windows.Forms.Button btStopDIsp;
         private System.Windows.Forms.Button btCleanDIsp;
         private System.Windows.Forms.Button btLapDIsp;
-        private System.Windows.Forms.Label lbLap;
+        private System.Windows.Forms.Timer tmpict;
+        private System.Windows.Forms.ListBox lbLap;
     }
 }
 

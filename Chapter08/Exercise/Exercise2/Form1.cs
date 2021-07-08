@@ -41,7 +41,7 @@ namespace Exercise2 {
         }
 
         private void btLapDIsp_Click(object sender, EventArgs e) {
-            //lbLap.items.Insert(0, sw.Elapsed.ToString(@"hh\:mm\:ss\:ff"));
+            lbLap.Items.Insert(0, sw.Elapsed.ToString(@"hh\:mm\:ss\:ff"));
         }
     }
 }
