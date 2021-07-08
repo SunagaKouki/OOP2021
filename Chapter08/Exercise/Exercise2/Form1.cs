@@ -25,10 +25,6 @@ namespace Exercise2 {
             lbTimerDisp.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\:ff");
         }
 
-        private void timer1_Tick(object sender, EventArgs e) {
-            lbTimerDisp.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\:ff");
-        }
-
         private void btStartDisp_Click(object sender, EventArgs e) {
             sw.Start();
             tm.Start();
