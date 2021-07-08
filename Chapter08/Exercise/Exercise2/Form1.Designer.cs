@@ -24,14 +24,12 @@ namespace Exercise2 {
         /// コード エディターで変更しないでください。
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             this.lbTimerDisp = new System.Windows.Forms.Label();
             this.btStartDisp = new System.Windows.Forms.Button();
             this.btStopDIsp = new System.Windows.Forms.Button();
             this.btCleanDIsp = new System.Windows.Forms.Button();
             this.btLapDIsp = new System.Windows.Forms.Button();
             this.lbLap = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lbTimerDisp
@@ -98,9 +96,6 @@ namespace Exercise2 {
             this.lbLap.TabIndex = 5;
             this.lbLap.Text = "lbLap";
             // 
-            // timer1
-            // 
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -128,7 +123,6 @@ namespace Exercise2 {
         private System.Windows.Forms.Button btCleanDIsp;
         private System.Windows.Forms.Button btLapDIsp;
         private System.Windows.Forms.Label lbLap;
-        private System.Windows.Forms.Timer timer1;
     }
 }
 
