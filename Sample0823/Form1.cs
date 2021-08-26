@@ -24,6 +24,11 @@ namespace Sample0823 {
             }
 
             Result.Text = ans.ToString();
+
+            //int num1 = int.Parse(Value.Text);
+            //int num2 = int.Parse(Jyou.Text);
+
+            //Result.Text = Math.Pow(num1, num2).ToString();
         }
     }
 }
