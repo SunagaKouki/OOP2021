@@ -33,23 +33,27 @@ namespace Exercise1 {
 
         private static void Exercise1_2(string file) {
             var xdoc = XDocument.Load(file);
-            var xnovelists = xdoc.Root.Elements()
-                                 .OrderByDescending(x => (int)(x.Element("firstplayed")));
+            var sports = xdoc.Root.Elements()
+                             .Select(x => new {
+                                 Firstplayed = x.Element("firstplayed").Value,
+                                 Name = x.Element("name").Attribute("kanji").Value
+                             }).OrderBy(x => int.Parse(x.Firstplayed));
 
-            foreach (var xnovelist in xnovelists) {
-                var xname = xnovelist.Element("name");
-                XAttribute xkanji = xname.Attribute("kanji");
-                Console.WriteLine("{0}", xkanji?.Value);
+            foreach (var sport in sports) {
+                Console.WriteLine("{0} {1}", sport.Name, sport.Firstplayed);
             }
         }
 
         private static void Exercise1_3(string file) {
             var xdoc = XDocument.Load(file);
+            var sports = xdoc.Root.Elements()
+                             .Select(x => new {
+                                 Name = x.Element("name").Value,
+                                 Teammembers = x.Element("teammembers").Value
+                             }).OrderByDescending(x => int.Parse(x.Teammembers))
+                               .First();
 
-            var xnovelist = xdoc.Root.Elements()
-                                .Max(x => (int)x.Element("teammembers"));
-
-            Console.WriteLine("{0}", xnovelist);
+            Console.WriteLine("{0}", sports.Name);
         }
     }
 }
