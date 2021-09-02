@@ -63,21 +63,17 @@ namespace Exercise1 {
         private static void Exercise1_4(string file) {
             var newfiles = "sports.xml";    //出力する新しいファイル
 
+            var xdoc = XDocument.Load(file);    //追加先のxmlファイルを読み込む
+
             //P290 リスト11.15を参考にする
             var element = new XElement("ballsport",
                             new XElement("name", "サッカー", new XAttribute("kanji", "蹴球")),
                             new XElement("teammembers", 11),
-                            new XElement("firstplayed", 1872)
+                            new XElement("firstplayed", 1863)
                           );
 
-            var xdoc = XDocument.Load("Sample.xml");
-            xdoc.Root.Add(element);
-
-            foreach (var xnovelist in xdoc.Root.Elements()) {
-                var xname = xnovelist.Element("name");
-                Console.WriteLine("{0}", xname);
-            }
-            
+            xdoc.Root.Add(element); //追加先へ追加
+            xdoc.Save(newfiles);
         }
     }
 }
