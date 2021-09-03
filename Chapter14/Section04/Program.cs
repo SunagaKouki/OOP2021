@@ -19,7 +19,56 @@ namespace Section04 {
             //DownloadString();
             //DownloadFileAsync();
             //OpenReadSample();
-            var results = GetWeatherReportFromYahoo(4610);
+
+            Dictionary<string, int> code = new Dictionary<string, int>() {
+                {"前橋",4210},
+                {"みなかみ", 4220},
+                {"宇都宮", 4110},
+                {"水戸", 4010},
+            };
+
+            //var list = new List<int> { 4210, 4220, 4110, 4010 };
+
+            Console.WriteLine("Yahoo!週間天気予報");
+            Console.WriteLine();
+            Console.WriteLine("地域コードを入力");
+            Console.WriteLine("1:前橋");
+            Console.WriteLine("2:みなかみ");
+            Console.WriteLine("3:宇都宮");
+            Console.WriteLine("4:水戸");
+            Console.WriteLine("9:その他（直接入力）");
+            Console.WriteLine();
+            Console.Write(">");
+
+            var selectArea = Console.ReadLine();    //文字列として入力した数字を取り込む
+
+            
+
+            //if (1 == int.Parse(selectArea)) {
+            //    var code1 = 4210;
+            //    var name1 = "前橋";
+            //    if (2 == int.Parse(selectArea)) {
+            //        var code2 = 4220;
+            //        var name2 = "みなかみ";
+            //        if (3 == int.Parse(selectArea)) {
+            //            var code3 = 4110;
+            //            var name3 = "宇都宮";
+            //            if (4 == int.Parse(selectArea)) {
+            //                var code4 = 4010;
+            //                var name4 = "水戸";
+            //                if (9 == int.Parse(selectArea)) {
+            //                    Console.WriteLine("コードを入力してください。");
+            //                    var code = Console.ReadLine();
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+
+            var results = GetWeatherReportFromYahoo(4210);
+            Console.WriteLine("******************:");
+            Console.WriteLine("{0}の週間天気を出力");
+            Console.WriteLine("******************:");
             foreach (var s in results) {
                 Console.WriteLine(s);
             }
@@ -79,7 +128,7 @@ namespace Section04 {
                 XDocument xdoc = XDocument.Load(stream);
                 var nodes = xdoc.Root.Descendants("title");
                 foreach (var node in nodes) {
-                    string s = Regex.Replace(node.Value, "【|】", "");
+                    string s = Regex.Replace(node.Value, "【|】| - Yahoo!天気・災害", "");
                     yield return s;
                 }
             }
