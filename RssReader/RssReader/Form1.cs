@@ -24,15 +24,21 @@ namespace RssReader {
         private void setRssTitle(string url) {
             using (var wc = new WebClient()) {
                 wc.Headers.Add("Content-type", "charset=UTF-8");
+
                 var urltext = new Uri(url);
                 var stream = wc.OpenRead(url);
 
                 XDocument xdoc = XDocument.Load(stream);
+
                 var nodes = xdoc.Root.Descendants("title");
                 foreach (var node in nodes) {
                     lbTitles.Items.Add(node.Value);
                 }
             }
+        }
+
+        private void lbTitles_SelectedIndexChanged(object sender, EventArgs e) {
+
         }
     }
 }
