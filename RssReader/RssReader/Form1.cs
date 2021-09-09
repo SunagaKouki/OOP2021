@@ -12,6 +12,8 @@ using System.Xml.Linq;
 
 namespace RssReader {
     public partial class Form1 : Form {
+        Dictionary<string, string> websitedic = new Dictionary<string, string>();
+
         public Form1() {
             InitializeComponent();
         }
@@ -25,20 +27,21 @@ namespace RssReader {
             using (var wc = new WebClient()) {
                 wc.Headers.Add("Content-type", "charset=UTF-8");
 
-                var urltext = new Uri(url);
                 var stream = wc.OpenRead(url);
-
                 XDocument xdoc = XDocument.Load(stream);
 
-                var nodes = xdoc.Root.Descendants("title");
-                foreach (var node in nodes) {
-                    lbTitles.Items.Add(node.Value);
+                var titles = xdoc.Root.Descendants("title").ToArray();
+                var links = xdoc.Root.Descendants("link").ToArray();
+                lbTitles.Items.Clear();
+
+                for (int i = 0; i < titles.Length; i++) {
+                    websitedic.Add(titles[i].Value, links[i].Value);
+                }
+
+                foreach (var title in websitedic.Keys) {
+                    lbTitles.Items.Add(title);
                 }
             }
-        }
-
-        private void lbTitles_SelectedIndexChanged(object sender, EventArgs e) {
-
         }
     }
 }
