@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace RssReader {
     public partial class Form1 : Form {
-        Dictionary<string, string> websitedic = new Dictionary<string, string>();
+        Dictionary<string, string> websitedic = new Dictionary<string, string>();   //titleとlinkを紐づける
 
         public Form1() {
             InitializeComponent();
@@ -41,6 +41,12 @@ namespace RssReader {
                 foreach (var title in websitedic.Keys) {
                     lbTitles.Items.Add(title);
                 }
+            }
+        }
+
+        private void lbTitles_Click(object sender, EventArgs e) {
+            if (websitedic.TryGetValue(lbTitles.SelectedItem.ToString(), out var urlstring)) {
+                wbBrowser.Url = new Uri(urlstring);
             }
         }
     }
