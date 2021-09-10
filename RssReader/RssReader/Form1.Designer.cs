@@ -61,11 +61,11 @@ namespace RssReader {
             // 
             // wbBrowser
             // 
-            this.wbBrowser.Location = new System.Drawing.Point(337, 58);
+            this.wbBrowser.Location = new System.Drawing.Point(337, 128);
             this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbBrowser.Name = "wbBrowser";
             this.wbBrowser.ScriptErrorsSuppressed = true;
-            this.wbBrowser.Size = new System.Drawing.Size(781, 559);
+            this.wbBrowser.Size = new System.Drawing.Size(781, 489);
             this.wbBrowser.TabIndex = 3;
             this.wbBrowser.Url = new System.Uri("", System.UriKind.Relative);
             // 

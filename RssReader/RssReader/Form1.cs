@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace RssReader {
     public partial class Form1 : Form {
-        Dictionary<string, string> websitedic = new Dictionary<string, string>();   //titleとlinkを紐づける
+        IEnumerable<ItemDate> items = null;
 
         public Form1() {
             InitializeComponent();
@@ -30,24 +30,22 @@ namespace RssReader {
                 var stream = wc.OpenRead(url);
                 XDocument xdoc = XDocument.Load(stream);
 
-                var titles = xdoc.Root.Descendants("title").ToArray();
-                var links = xdoc.Root.Descendants("link").ToArray();
+                items = xdoc.Root.Descendants("item").Select(x => new ItemDate {
+                    Title = (string)x.Element("title"),
+                    Link = (string)x.Element("link"),
+                    PubDate = (DateTime)x.Element("pubDate"),
+                    Description = (string)x.Element("description")
+                });
                 lbTitles.Items.Clear();
 
-                for (int i = 0; i < titles.Length; i++) {
-                    websitedic.Add(titles[i].Value, links[i].Value);
-                }
-
-                foreach (var title in websitedic.Keys) {
-                    lbTitles.Items.Add(title);
+                foreach (var item in items) {
+                    lbTitles.Items.Add(item.Title);
                 }
             }
         }
 
         private void lbTitles_Click(object sender, EventArgs e) {
-            if (websitedic.TryGetValue(lbTitles.SelectedItem.ToString(), out var urlstring)) {
-                wbBrowser.Url = new Uri(urlstring);
-            }
+            wbBrowser.Url = new Uri(items.ToArray()[lbTitles.SelectedIndex].Link);
         }
     }
 }
