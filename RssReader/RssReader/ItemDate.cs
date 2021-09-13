@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace RssReader {
+    //読み込んだ情報を格納するクラス
     class ItemDate {
         public string Title { get; set; }
         public string Link { get; set; }

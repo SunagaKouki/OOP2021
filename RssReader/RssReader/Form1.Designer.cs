@@ -31,6 +31,7 @@ namespace RssReader {
             this.lbDescription = new System.Windows.Forms.Label();
             this.tbPubDate = new System.Windows.Forms.TextBox();
             this.btDisplay = new System.Windows.Forms.Button();
+            this.btExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -106,11 +107,23 @@ namespace RssReader {
             this.btDisplay.UseVisualStyleBackColor = true;
             this.btDisplay.Click += new System.EventHandler(this.btDisplay_Click);
             // 
+            // btExit
+            // 
+            this.btExit.Font = new System.Drawing.Font("源ノ角ゴシック Code JP R", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btExit.Location = new System.Drawing.Point(797, 358);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(304, 51);
+            this.btExit.TabIndex = 8;
+            this.btExit.Text = "アプリケーションを終了する";
+            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 651);
+            this.Controls.Add(this.btExit);
             this.Controls.Add(this.btDisplay);
             this.Controls.Add(this.tbPubDate);
             this.Controls.Add(this.lbDescription);
@@ -134,6 +147,7 @@ namespace RssReader {
         private System.Windows.Forms.Label lbDescription;
         private System.Windows.Forms.TextBox tbPubDate;
         private System.Windows.Forms.Button btDisplay;
+        private System.Windows.Forms.Button btExit;
     }
 }
 

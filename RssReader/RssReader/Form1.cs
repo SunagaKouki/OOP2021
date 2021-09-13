@@ -73,8 +73,12 @@ namespace RssReader {
                 browser.wbBrowser.Url = url;
                 browser.Show();
             }
-            catch (Exception) {
+            catch (ArgumentNullException) {
             }
+        }
+
+        private void btExit_Click(object sender, EventArgs e) {
+            Application.Exit();
         }
     }
 }
