@@ -25,27 +25,56 @@ namespace RssReader {
         //指定したURL先からXMLデータを取得し、title要素を取得し、リストボックスへセットする
         private void setRssTitle(string url) {
             using (var wc = new WebClient()) {
-                wc.Headers.Add("Content-type", "charset=UTF-8");
+                try {
+                    wc.Headers.Add("Content-type", "charset=UTF-8");
 
-                var stream = wc.OpenRead(url);
-                XDocument xdoc = XDocument.Load(stream);
+                    var stream = wc.OpenRead(url);
+                    XDocument xdoc = XDocument.Load(stream);
 
-                items = xdoc.Root.Descendants("item").Select(x => new ItemDate {
-                    Title = (string)x.Element("title"),
-                    Link = (string)x.Element("link"),
-                    PubDate = (DateTime)x.Element("pubDate"),
-                    Description = (string)x.Element("description")
-                });
-                lbTitles.Items.Clear();
+                    items = xdoc.Root.Descendants("item").Select(x => new ItemDate {
+                        Title = (string)x.Element("title"),
+                        Link = (string)x.Element("link"),
+                        PubDate = (DateTime)x.Element("pubDate"),
+                        Description = (string)x.Element("description")
+                    });
+                    lbTitles.Items.Clear();
 
-                foreach (var item in items) {
-                    lbTitles.Items.Add(item.Title);
+                    foreach (var item in items) {
+                        lbTitles.Items.Add(item.Title);
+                    }
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
 
         private void lbTitles_Click(object sender, EventArgs e) {
-            wbBrowser.Url = new Uri(items.ToArray()[lbTitles.SelectedIndex].Link);
+            try {
+                tbPubDate.Text = "更新の日付：";
+                tbPubDate.Text += (items.ToArray()[lbTitles.SelectedIndex].PubDate.ToString());
+
+                lbDescription.Text = "概要:";
+                if (items.ToArray()[lbTitles.SelectedIndex].Description != null) {
+                    lbDescription.Text += (items.ToArray()[lbTitles.SelectedIndex].Description);
+                } else {
+                    lbDescription.Text += "なし";
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btDisplay_Click(object sender, EventArgs e) {
+            try {
+                Browser browser = new Browser();
+                var url = new Uri(items.ToArray()[lbTitles.SelectedIndex].Link);
+                browser.wbBrowser.Url = url;
+                browser.Show();
+            }
+            catch (Exception) {
+            }
         }
     }
 }
