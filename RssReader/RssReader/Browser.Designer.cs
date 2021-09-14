@@ -94,7 +94,7 @@ namespace RssReader {
         #endregion
         private System.Windows.Forms.Button btReturn;
         private System.Windows.Forms.Button btMove;
-        public System.Windows.Forms.WebBrowser wbBrowser;
         private System.Windows.Forms.Button btClose;
+        public System.Windows.Forms.WebBrowser wbBrowser;
     }
 }

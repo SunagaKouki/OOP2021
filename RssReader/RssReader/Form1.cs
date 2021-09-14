@@ -37,7 +37,6 @@ namespace RssReader {
                         PubDate = (DateTime)x.Element("pubDate"),
                         Description = (string)x.Element("description")
                     });
-                    lbTitles.Items.Clear();
 
                     foreach (var item in items) {
                         lbTitles.Items.Add(item.Title);
@@ -55,9 +54,12 @@ namespace RssReader {
                 tbPubDate.Text += (items.ToArray()[lbTitles.SelectedIndex].PubDate.ToString());
 
                 lbDescription.Text = "概要:";
+                //Descriptionが存在するか
                 if (items.ToArray()[lbTitles.SelectedIndex].Description != null) {
+                    //取得できた場合
                     lbDescription.Text += (items.ToArray()[lbTitles.SelectedIndex].Description);
                 } else {
+                    //取得できなかった場合
                     lbDescription.Text += "なし";
                 }
             }
