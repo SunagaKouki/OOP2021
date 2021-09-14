@@ -25,8 +25,8 @@ namespace RssReader {
         /// </summary>
         private void InitializeComponent() {
             this.wbBrowser = new System.Windows.Forms.WebBrowser();
-            this.btReturn = new System.Windows.Forms.Button();
-            this.btMove = new System.Windows.Forms.Button();
+            this.btBack = new System.Windows.Forms.Button();
+            this.btForward = new System.Windows.Forms.Button();
             this.btClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -43,36 +43,36 @@ namespace RssReader {
             this.wbBrowser.TabIndex = 0;
             this.wbBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.wbBrowser_DocumentCompleted);
             // 
-            // btReturn
+            // btBack
             // 
-            this.btReturn.Font = new System.Drawing.Font("源ノ角ゴシック Code JP R", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btReturn.Location = new System.Drawing.Point(13, 13);
-            this.btReturn.Name = "btReturn";
-            this.btReturn.Size = new System.Drawing.Size(102, 41);
-            this.btReturn.TabIndex = 1;
-            this.btReturn.Text = "戻る";
-            this.btReturn.UseVisualStyleBackColor = true;
-            this.btReturn.Click += new System.EventHandler(this.btReturn_Click);
+            this.btBack.Font = new System.Drawing.Font("源ノ角ゴシック Code JP R", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btBack.Location = new System.Drawing.Point(13, 13);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(102, 41);
+            this.btBack.TabIndex = 1;
+            this.btBack.Text = "戻る";
+            this.btBack.UseVisualStyleBackColor = true;
+            this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
-            // btMove
+            // btForward
             // 
-            this.btMove.Font = new System.Drawing.Font("源ノ角ゴシック Code JP R", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btMove.Location = new System.Drawing.Point(131, 13);
-            this.btMove.Name = "btMove";
-            this.btMove.Size = new System.Drawing.Size(102, 41);
-            this.btMove.TabIndex = 2;
-            this.btMove.Text = "進む";
-            this.btMove.UseVisualStyleBackColor = true;
-            this.btMove.Click += new System.EventHandler(this.btMove_Click);
+            this.btForward.Font = new System.Drawing.Font("源ノ角ゴシック Code JP R", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btForward.Location = new System.Drawing.Point(131, 13);
+            this.btForward.Name = "btForward";
+            this.btForward.Size = new System.Drawing.Size(102, 41);
+            this.btForward.TabIndex = 2;
+            this.btForward.Text = "進む";
+            this.btForward.UseVisualStyleBackColor = true;
+            this.btForward.Click += new System.EventHandler(this.btForward_Click);
             // 
             // btClose
             // 
             this.btClose.Font = new System.Drawing.Font("源ノ角ゴシック Code JP R", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btClose.Location = new System.Drawing.Point(249, 14);
             this.btClose.Name = "btClose";
-            this.btClose.Size = new System.Drawing.Size(102, 41);
+            this.btClose.Size = new System.Drawing.Size(227, 41);
             this.btClose.TabIndex = 3;
-            this.btClose.Text = "閉じる";
+            this.btClose.Text = "ブラウザーを閉じる";
             this.btClose.UseVisualStyleBackColor = true;
             this.btClose.Click += new System.EventHandler(this.btClose_Click);
             // 
@@ -82,8 +82,8 @@ namespace RssReader {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 631);
             this.Controls.Add(this.btClose);
-            this.Controls.Add(this.btMove);
-            this.Controls.Add(this.btReturn);
+            this.Controls.Add(this.btForward);
+            this.Controls.Add(this.btBack);
             this.Controls.Add(this.wbBrowser);
             this.Name = "Browser";
             this.Text = "Browser";
@@ -92,8 +92,8 @@ namespace RssReader {
         }
 
         #endregion
-        private System.Windows.Forms.Button btReturn;
-        private System.Windows.Forms.Button btMove;
+        private System.Windows.Forms.Button btBack;
+        private System.Windows.Forms.Button btForward;
         private System.Windows.Forms.Button btClose;
         public System.Windows.Forms.WebBrowser wbBrowser;
     }

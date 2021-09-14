@@ -14,21 +14,21 @@ namespace RssReader {
             InitializeComponent();
         }
 
-        private void btReturn_Click(object sender, EventArgs e) {
+        private void wbBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e) {
+            btBack.Enabled = wbBrowser.CanGoBack;
+            btForward.Enabled = wbBrowser.CanGoForward;
+        }
+
+        private void btBack_Click(object sender, EventArgs e) {
             wbBrowser.GoBack();
         }
 
-        private void btMove_Click(object sender, EventArgs e) {
+        private void btForward_Click(object sender, EventArgs e) {
             wbBrowser.GoForward();
         }
 
         private void btClose_Click(object sender, EventArgs e) {
             Close();
-        }
-
-        private void wbBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e) {
-            btReturn.Enabled = wbBrowser.CanGoBack;
-            btMove.Enabled = wbBrowser.CanGoForward;
         }
     }
 }

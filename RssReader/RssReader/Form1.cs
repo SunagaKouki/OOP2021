@@ -60,7 +60,7 @@ namespace RssReader {
                     lbDescription.Text += (items.ToArray()[lbTitles.SelectedIndex].Description);
                 } else {
                     //取得できなかった場合
-                    lbDescription.Text += "なし";
+                    lbDescription.Text += "ありません";
                 }
             }
             catch (Exception ex) {
