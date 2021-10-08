@@ -26,11 +26,16 @@ namespace SendMail {
         }
 
         private void btSend_Click(object sender, EventArgs e) {
+            if (!Settings.Set) {
+                MessageBox.Show("送信情報を設定してください");
+                return;
+            }
+
             try {
                 //メール送信の為のインスタンスを生成
                 MailMessage mailMessage = new MailMessage();
                 //差出人メールアドレス
-                mailMessage.From = new MailAddress("ojsinfosys01@gmail.com");
+                mailMessage.From = new MailAddress(configForm.settings.MailAddr);
 
                 //宛先（To）
                 mailMessage.To.Add(tbTo.Text);
@@ -57,10 +62,7 @@ namespace SendMail {
 
                 string userState = "SendMail";
                 smtpClient.SendAsync(mailMessage, userState);
-
-                //MessageBox.Show("送信完了");
             }
-
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
@@ -79,10 +81,18 @@ namespace SendMail {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            using (var reader = XmlReader.Create("mailsetting.xml")) {
-                var serializer = new DataContractSerializer(typeof(Settings));
-                settings = serializer.ReadObject(reader) as Settings;
+            //起動時に送信情報が未設定の場合、設定画面を表示する
+            if (Settings.Set) {
+                configForm.ShowDialog();
             }
+        }
+
+        private void 終了XToolStripMenuItem_Click(object sender, EventArgs e) {
+            Application.Exit();
+        }
+
+        private void 新規作成NToolStripMenuItem_Click(object sender, EventArgs e) {
+            Application.Restart();
         }
     }
 }
