@@ -15,7 +15,7 @@ using System.Xml.Linq;
 
 namespace SendMail {
     public partial class Form1 : Form {
-
+        //自分のgmailアドレスとパスワードで実行
         //設定画面
         private ConfigForm configForm = new ConfigForm();
         //設定情報
