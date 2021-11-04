@@ -41,6 +41,11 @@ namespace SendMail {
 
         //キャンセルボタン
         private void btCancel_Click(object sender, EventArgs e) {
+            if (settings.Checks()) {
+                this.Close();
+            } else {
+                Check_All();
+            }
             this.Close();
         }
 
@@ -51,6 +56,25 @@ namespace SendMail {
             tbPass.Text = settings.Pass;
             cbSsl.Checked = settings.Ssl;
             tbSender.Text = settings.MailAddr;
+        }
+
+        private bool Check_All() {
+            if (string.IsNullOrWhiteSpace(tbHost.Text)) {
+                MessageBox.Show("送信サーバーが未入力です");
+            }
+            if (string.IsNullOrWhiteSpace(tbPort.Text)) {
+                MessageBox.Show("ポート番号がみにゅ力です");
+
+            }
+            if (string.IsNullOrWhiteSpace(tbUserName.Text)) {
+                MessageBox.Show("ユーザー名が未入力です");
+            }
+            if (string.IsNullOrWhiteSpace(tbPass.Text)) {
+                MessageBox.Show("パスワードが未入力です");
+            }
+            settings.setSendConfig(tbHost.Text, int.Parse(tbPort.Text), tbUserName.Text, tbPass.Text, cbSsl.Checked);
+
+            return true;
         }
     }
 }

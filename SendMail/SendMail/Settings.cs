@@ -77,6 +77,22 @@ namespace SendMail {
             return true;
         }
 
+        public bool Checks() {
+            if (string.IsNullOrWhiteSpace(Host)) {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(Port.ToString())) {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(MailAddr)) {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(Pass)) {
+                return false;
+            }
+            return true;
+        }
+
         //初期値
         public string sHost() {
             return "smtp.gmail.com";

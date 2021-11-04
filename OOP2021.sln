@@ -98,9 +98,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RssReader", "RssReader\RssReader\RssReader.csproj", "{897F7FC3-1396-48D1-8413-FBD941403ED8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SendMail", "SendMail", "{B2C08A13-B3B9-4F66-BA61-E2EF054BDDA3}"
-	ProjectSection(SolutionItems) = preProject
-		\\172.16.42.1\学生共有\#infosys2021\オブジェクト指向プログラミング\３期目\メール送信アプリ提出関係\テスト仕様書_〇〇〇〇.xlsx = \\172.16.42.1\学生共有\#infosys2021\オブジェクト指向プログラミング\３期目\メール送信アプリ提出関係\テスト仕様書_〇〇〇〇.xlsx
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendMail", "SendMail\SendMail\SendMail.csproj", "{5CE4A84D-5E8D-424E-909B-DBAFAEFCD663}"
 EndProject
