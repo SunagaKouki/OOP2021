@@ -31,6 +31,18 @@ namespace SendMail {
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(tbTo.Text)) {
+                MessageBox.Show("宛先を入力してください");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(tbMessage.Text)) {
+                MessageBox.Show("本文を入力してください");
+                return;
+            }
+
+            btSend.Enabled = false;
+
             try {
                 //メール送信の為のインスタンスを生成
                 MailMessage mailMessage = new MailMessage();
@@ -73,6 +85,7 @@ namespace SendMail {
                 MessageBox.Show(e.Error.Message);
             } else {
                 MessageBox.Show("送信完了");
+                新規作成NToolStripMenuItem_Click(sender, e);
             }
         }
 
@@ -92,7 +105,11 @@ namespace SendMail {
         }
 
         private void 新規作成NToolStripMenuItem_Click(object sender, EventArgs e) {
-            Application.Restart();
+            tbTo.Text = "";
+            tbCc.Text = "";
+            tbbcc.Text = "";
+            tbTitle.Text = "";
+            tbMessage.Text = "";
         }
     }
 }
