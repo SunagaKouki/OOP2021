@@ -290,7 +290,7 @@ namespace CarReportSystem {
             this.buOpen1.Size = new System.Drawing.Size(63, 36);
             this.buOpen1.TabIndex = 18;
             this.buOpen1.Text = "開く...";
-            this.buOpen1.UseVisualStyleBackColor = true;
+            this.buOpen1.UseVisualStyleBackColor = true
             // 
             // btSave
             // 
