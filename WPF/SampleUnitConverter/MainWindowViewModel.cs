@@ -7,8 +7,7 @@ using System.Windows.Input;
 
 namespace SampleUnitConverter {
     public class MainWindowViewModel : ViewModel {
-        private double metricValue;
-        private double imperialValue;
+        private double metricValue, imperialValue;
 
         //▲ボタンで呼ばれるコマンド【ヤード単位からメートル単位】
         public ICommand ImperialUnitToMetric { get; private set; }
@@ -40,9 +39,11 @@ namespace SampleUnitConverter {
         public MainWindowViewModel() {
             this.CurrentMetricUnit = MetricUnit.Units.First();
             this.CurrentImperialUnit = ImperialUnit.Units.First();
+
             this.MetricToImperialUnit = new DelegateCommand(
                 () => this.ImperialValue = this.CurrentImperialUnit.FromMetricUnit(
                     this.CurrentMetricUnit, this.MetricValue));
+
             this.ImperialUnitToMetric = new DelegateCommand(
                 () => this.MetricValue = this.CurrentMetricUnit.FromImperialUnit(
                     this.CurrentImperialUnit, this.ImperialValue));

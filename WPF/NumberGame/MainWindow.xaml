@@ -1,0 +1,58 @@
+﻿<Window x:Class="NumberGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NumberGame"
+        mc:Ignorable="d"
+        Title="NumberGame" SizeToContent="WidthAndHeight" 
+        FontSize="30" FontFamily="Segoe UI Light">
+    <Grid>
+        <StackPanel>
+            <!--1段目-->
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="checkNo1" Content="1" Width="50" Margin="1" Click="checkNo1_Click"/>
+                <Button x:Name="checkNo2" Content="2" Width="50" Margin="1"/>
+                <Button x:Name="checkNo3" Content="3" Width="50" Margin="1"/>
+                <Button x:Name="checkNo4" Content="4" Width="50" Margin="1"/>
+                <Button x:Name="checkNo5" Content="5" Width="50" Margin="1"/>
+            </StackPanel>
+            <!--2段目-->
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="checkNo6" Content="6" Width="50" Margin="1"/>
+                <Button x:Name="checkNo7" Content="7" Width="50" Margin="1"/>
+                <Button x:Name="checkNo8" Content="8" Width="50" Margin="1"/>
+                <Button x:Name="checkNo9" Content="9" Width="50" Margin="1"/>
+                <Button x:Name="checkNo10" Content="10" Width="50" Margin="1"/>
+            </StackPanel>
+            <!--3段目-->
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="checkNo11" Content="11" Width="50" Margin="1"/>
+                <Button x:Name="checkNo12" Content="12" Width="50" Margin="1"/>
+                <Button x:Name="checkNo13" Content="13" Width="50" Margin="1"/>
+                <Button x:Name="checkNo14" Content="14" Width="50" Margin="1"/>
+                <Button x:Name="checkNo15" Content="15" Width="50" Margin="1"/>
+            </StackPanel>
+            <!--4段目-->
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="checkNo16" Content="16" Width="50" Margin="1"/>
+                <Button x:Name="checkNo17" Content="17" Width="50" Margin="1"/>
+                <Button x:Name="checkNo18" Content="18" Width="50" Margin="1"/>
+                <Button x:Name="checkNo19" Content="19" Width="50" Margin="1"/>
+                <Button x:Name="checkNo20" Content="20" Width="50" Margin="1"/>
+            </StackPanel>
+            <!--5段目-->
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="checkNo21" Content="21" Width="50" Margin="1"/>
+                <Button x:Name="checkNo22" Content="22" Width="50" Margin="1"/>
+                <Button x:Name="checkNo23" Content="23" Width="50" Margin="1"/>
+                <Button x:Name="checkNo24" Content="24" Width="50" Margin="1"/>
+                <Button x:Name="checkNo25" Content="25" Width="50" Margin="1"/>
+            </StackPanel>
+            <!--6段目-->
+            <StackPanel>
+                <TextBlock x:Name="tbText" Margin="3"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
