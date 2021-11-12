@@ -1,6 +1,6 @@
 ﻿
 namespace CarReportSystem {
-    partial class Form1 {
+    partial class fmMain {
         /// <summary>
         /// 必要なデザイナー変数です。
         /// </summary>
@@ -25,7 +25,7 @@ namespace CarReportSystem {
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
             this.cmAuthor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,9 +45,6 @@ namespace CarReportSystem {
             this.tbReport = new System.Windows.Forms.TextBox();
             this.btOpen = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
-            this.btAdd = new System.Windows.Forms.Button();
-            this.btFix = new System.Windows.Forms.Button();
-            this.btDateDelete = new System.Windows.Forms.Button();
             this.btConnect = new System.Windows.Forms.Button();
             this.btUpdate = new System.Windows.Forms.Button();
             this.pbPicture = new System.Windows.Forms.PictureBox();
@@ -284,36 +281,6 @@ namespace CarReportSystem {
             this.btDelete.Text = "削除";
             this.btDelete.UseVisualStyleBackColor = true;
             this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
-            // 
-            // btAdd
-            // 
-            this.btAdd.Location = new System.Drawing.Point(436, 296);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(87, 48);
-            this.btAdd.TabIndex = 15;
-            this.btAdd.Text = "追加";
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
-            // 
-            // btFix
-            // 
-            this.btFix.Location = new System.Drawing.Point(524, 296);
-            this.btFix.Name = "btFix";
-            this.btFix.Size = new System.Drawing.Size(87, 48);
-            this.btFix.TabIndex = 16;
-            this.btFix.Text = "修正";
-            this.btFix.UseVisualStyleBackColor = true;
-            this.btFix.Click += new System.EventHandler(this.btFix_Click);
-            // 
-            // btDateDelete
-            // 
-            this.btDateDelete.Location = new System.Drawing.Point(613, 296);
-            this.btDateDelete.Name = "btDateDelete";
-            this.btDateDelete.Size = new System.Drawing.Size(87, 48);
-            this.btDateDelete.TabIndex = 17;
-            this.btDateDelete.Text = "削除";
-            this.btDateDelete.UseVisualStyleBackColor = true;
-            this.btDateDelete.Click += new System.EventHandler(this.btDateDelete_Click);
             // 
             // btConnect
             // 
@@ -602,7 +569,7 @@ namespace CarReportSystem {
             this.ssErrerLabel.Size = new System.Drawing.Size(118, 17);
             this.ssErrerLabel.Text = "toolStripStatusLabel1";
             // 
-            // Form1
+            // fmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -615,9 +582,6 @@ namespace CarReportSystem {
             this.Controls.Add(this.pbPicture);
             this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.btConnect);
-            this.Controls.Add(this.btDateDelete);
-            this.Controls.Add(this.btFix);
-            this.Controls.Add(this.btAdd);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btOpen);
             this.Controls.Add(this.tbReport);
@@ -631,7 +595,7 @@ namespace CarReportSystem {
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmAuthor);
-            this.Name = "Form1";
+            this.Name = "fmMain";
             this.Text = "カーレポートシステム";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
@@ -671,9 +635,6 @@ namespace CarReportSystem {
         private System.Windows.Forms.TextBox tbReport;
         private System.Windows.Forms.Button btOpen;
         private System.Windows.Forms.Button btDelete;
-        private System.Windows.Forms.Button btAdd;
-        private System.Windows.Forms.Button btFix;
-        private System.Windows.Forms.Button btDateDelete;
         private System.Windows.Forms.Button btConnect;
         private System.Windows.Forms.Button btUpdate;
         private System.Windows.Forms.PictureBox pbPicture;
