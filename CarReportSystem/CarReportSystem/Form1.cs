@@ -14,7 +14,6 @@ namespace CarReportSystem {
 
         public fmMain() {
             InitializeComponent();
-            //dgvRegistData.DataSource = listCarReport;
         }
 
         //アプリケーション終了
@@ -156,6 +155,7 @@ namespace CarReportSystem {
             return b;
         }
 
+        //エラー防止用
         private void carReportDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e) {
 
         }
