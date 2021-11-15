@@ -57,6 +57,22 @@ namespace CarReportSystem {
             }
         }
 
+        private void dgvRegistData_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex == -1)
+                return;
+
+            //選択された行のデータを取得
+            CarReport selectedCar = listCarReport[e.RowIndex];
+
+            //取得したデータ項目を各コントロールへ設定
+            dtpDate.Value = selectedCar.Date;
+            cmAuthor.Text = selectedCar.Auther;
+            SetMakerRadioButton(selectedCar.Maker);
+            cbCarName.Text = selectedCar.CarName;
+            tbReport.Text = selectedCar.Report;
+            pbPicture.Image = selectedCar.Picture;
+        }
+
         private void SetMakerRadioButton(CarReport.MakerGroup mg) {
             switch (mg) {
                 case CarReport.MakerGroup.トヨタ:
@@ -154,8 +170,7 @@ namespace CarReportSystem {
             byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
             return b;
         }
-
-        //エラー防止用
+        
         private void carReportDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e) {
 
         }
