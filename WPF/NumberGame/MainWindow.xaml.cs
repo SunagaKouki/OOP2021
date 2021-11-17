@@ -18,12 +18,26 @@ namespace NumberGame {
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
     public partial class MainWindow : Window {
+        int rand = new Random().Next(1, 26);
+
         public MainWindow() {
             InitializeComponent();
         }
 
-        private void checkNo1_Click(object sender, RoutedEventArgs e) {
+        private void Window_Loaded(object sender, RoutedEventArgs e) {
             
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            int num = int.Parse((string)((Button)sender).Content);
+
+            if (rand == num) {
+                TbTextNum.Text = "正解";
+            } else if (rand > num) {
+                TbTextNum.Text = "もっと大きい数字です";
+            } else {
+                TbTextNum.Text = "もっと小さい数字です";
+            }
         }
     }
 }
