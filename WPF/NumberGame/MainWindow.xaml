@@ -23,31 +23,31 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
+            <!--1段目-->
             <Button x:Name="No1" Content="1" Height="78" Grid.Column="0" Grid.Row="1" Click="Button_Click"/>
             <Button x:Name="No2" Content="2" Grid.Column="1" Grid.Row="1" Click="Button_Click"/>
             <Button x:Name="No3" Content="3" Grid.Column="2" Grid.Row="1" Click="Button_Click"/>
             <Button x:Name="No4" Content="4" Grid.Column="3" Grid.Row="1" Click="Button_Click"/>
             <Button x:Name="No5" Content="5" Grid.Column="4" Grid.Row="1" Click="Button_Click"/>
-
+            <!--2段目-->
             <Button x:Name="No6" Content="6" Height="78" Grid.Column="0" Grid.Row="2" Click="Button_Click"/>
             <Button x:Name="No7" Content="7" Grid.Column="1" Grid.Row="2" Click="Button_Click"/>
             <Button x:Name="No8" Content="8" Grid.Column="2" Grid.Row="2" Click="Button_Click"/>
             <Button x:Name="No9" Content="9" Grid.Column="3" Grid.Row="2" Click="Button_Click"/>
             <Button x:Name="No10" Content="10" Grid.Column="4" Grid.Row="2" Click="Button_Click"/>
-
+            <!--3段目-->
             <Button x:Name="No11" Content="11" Height="78" Grid.Column="0" Grid.Row="3" Click="Button_Click"/>
             <Button x:Name="No12" Content="12" Grid.Column="1" Grid.Row="3" Click="Button_Click"/>
             <Button x:Name="No13" Content="13" Grid.Column="2" Grid.Row="3" Click="Button_Click"/>
             <Button x:Name="No14" Content="14" Grid.Column="3" Grid.Row="3" Click="Button_Click"/>
             <Button x:Name="No15" Content="15" Grid.Column="4" Grid.Row="3" Click="Button_Click"/>
-
+            <!--4段目-->
             <Button x:Name="No16" Content="16" Height="78" Grid.Column="0" Grid.Row="4" Click="Button_Click"/>
             <Button x:Name="No17" Content="17" Grid.Column="1" Grid.Row="4" Click="Button_Click"/>
             <Button x:Name="No18" Content="18" Grid.Column="2" Grid.Row="4" Click="Button_Click"/>
             <Button x:Name="No19" Content="19" Grid.Column="3" Grid.Row="4" Click="Button_Click"/>
             <Button x:Name="No20" Content="20" Grid.Column="4" Grid.Row="4" Click="Button_Click"/>
-
+            <!--5段目-->
             <Button x:Name="No21" Content="21" Height="78" Grid.Column="0" Grid.Row="5" Click="Button_Click"/>
             <Button x:Name="No22" Content="22" Grid.Column="1" Grid.Row="5" Click="Button_Click"/>
             <Button x:Name="No23" Content="23" Grid.Column="2" Grid.Row="5" Click="Button_Click"/>

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 namespace NumberGame {
     public partial class MainWindow : Window {
+        //乱数の生成
         int rand = new Random().Next(1, 26);
 
         public MainWindow() {
@@ -22,7 +23,6 @@ namespace NumberGame {
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
@@ -31,9 +31,9 @@ namespace NumberGame {
             if (rand == num) {
                 TbTextNum.Text = "正解";
             } else if (rand > num) {
-                TbTextNum.Text = "もっと大きい数字です";
+                TbTextNum.Text = "もっと大きい数字";
             } else {
-                TbTextNum.Text = "もっと小さい数字です";
+                TbTextNum.Text = "もっと小さい数字";
             }
         }
     }
