@@ -155,7 +155,14 @@ namespace Pelmanism {
         /// <param name="playingCards">カードの配列</param>
         private void ShuffleCard(Card[] playingCards) {
             Random r = new Random();
-            
+            int pic = playingCards.Length;
+            while (pic > 0) {
+                pic--;
+                var n = r.Next(pic + 1);
+                var temp = playingCards[n].Picture;
+                playingCards[n].Picture = playingCards[pic].Picture;
+                playingCards[pic].Picture = temp;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e) {
