@@ -118,7 +118,6 @@ namespace CarReportSystem {
             // TODO: このコード行はデータを 'infosys202131DataSet.CarReport' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.carReportTableAdapter.Fill(this.infosys202131DataSet.CarReport);
 
-            bindingNavigator1.Enabled = true;
         }
 
         //更新ボタン
