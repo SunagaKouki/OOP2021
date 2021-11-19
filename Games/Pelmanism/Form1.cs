@@ -18,8 +18,10 @@ namespace Pelmanism {
             InitializeComponent();
         }
 
-        //カードの生成
-        //（仮引数）cards：カード配列への参照
+        /// <summary>
+        /// カードの生成
+        /// </summary>
+        /// <param name="cards">カード配列への参照</param>
         private void CreateCards(ref Card[] cards) {
             string[] picture = {
                 "○","●","△","▲","□","■","◇","◆","☆","★","※","×"
@@ -58,6 +60,29 @@ namespace Pelmanism {
 
         private void CardsButtons_Click(object sender, EventArgs e) {
             throw new NotImplementedException();
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e) {
+            //カードを混ぜる
+            ShuffleCard(playingCards);
+
+            //全部のカードを伏せる
+            foreach (var card in playingCards) {
+                card.Close();
+            }
+            buttonStart.Enabled = false;    //スタートボタン選択不可
+            gameSec = 0;
+            timer1.Start();
+
+            labelGuidance.Text = "クリックしてカードをめくってください。";
+        }
+
+        /// <summary>
+        /// カードを混ぜる
+        /// </summary>
+        /// <param name="playingCards">カードの配列</param>
+        private void ShuffleCard(Card[] playingCards) {
+            
         }
     }
 }

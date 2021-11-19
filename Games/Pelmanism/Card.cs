@@ -10,7 +10,7 @@ namespace Pelmanism {
     //カードクラス
     class Card : Button {
         //カードの横幅(W)と高さ(H)
-        private const int SizeW = 50, SizeH = 50;
+        private const int SizeW = 50, SizeH = 65;
 
         //カードの絵柄
         public string Picture { get; set; }
