@@ -155,7 +155,7 @@ namespace Pelmanism {
         /// <param name="playingCards">カードの配列</param>
         private void ShuffleCard(Card[] playingCards) {
             Random rand = new Random();
-            int pic = playingCards.Length;  //playingCardsの数をpicnumに格納
+            int pic = playingCards.Length;  //playingCardsの数をpicに格納
             while (pic > 0) {
                 pic--;
                 var n = rand.Next(pic + 1);
