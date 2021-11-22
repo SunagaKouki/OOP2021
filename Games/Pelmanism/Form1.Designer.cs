@@ -36,9 +36,9 @@ namespace Pelmanism {
             this.labelSec.AutoSize = true;
             this.labelSec.Location = new System.Drawing.Point(12, 9);
             this.labelSec.Name = "labelSec";
-            this.labelSec.Size = new System.Drawing.Size(47, 12);
+            this.labelSec.Size = new System.Drawing.Size(37, 12);
             this.labelSec.TabIndex = 0;
-            this.labelSec.Text = "0秒経過";
+            this.labelSec.Text = "残り秒";
             // 
             // labelGuidance
             // 
@@ -64,6 +64,7 @@ namespace Pelmanism {
             // timer1
             // 
             this.timer1.Interval = 1000;
+            this.timer1.Tag = "";
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FormGame

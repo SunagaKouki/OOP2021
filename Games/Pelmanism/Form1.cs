@@ -13,6 +13,7 @@ namespace Pelmanism {
         private Card[] playingCards;    //遊ぶカードの束
         private Player player;          //プレイヤー
         private int gameSec;            //ゲーム時間
+        private int timelimit = 5;
 
         public FormGame() {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace Pelmanism {
             CreateCards(ref playingCards);
             //プレイヤーの設定
             player = new Player();
+            labelSec.Text = "残り" + timelimit + "秒";
 
             //カードをフォームに動的に配置する
             SuspendLayout();
@@ -167,7 +169,15 @@ namespace Pelmanism {
 
         private void timer1_Tick(object sender, EventArgs e) {
             gameSec++;
-            labelSec.Text = gameSec + "秒経過";
+            int timer = timelimit - gameSec;
+            if (timer > 0) {
+                labelSec.Text = "残り" + timer + "秒";
+            } else {
+                timer1.Stop();
+                labelGuidance.Text = "時間切れです。";
+                labelSec.Text = "残り" + timer + "秒";
+                MessageBox.Show("時間切れです。");
+            }
         }
     }
 }
