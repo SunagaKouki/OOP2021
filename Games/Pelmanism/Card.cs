@@ -10,10 +10,10 @@ namespace Pelmanism {
     //カードクラス
     class Card : Button {
         //カードの横幅(W)と高さ(H)
-        private const int SizeW = 50, SizeH = 65;
+        private const int SizeW = 50, SizeH = 70;
 
         //カードの絵柄
-        public string Picture { get; set; }
+        public Image Picture { get; set; }
         //カードの状態（true:表 false:裏）
         public bool State { get; set; }
         //カード表面の色
@@ -22,7 +22,7 @@ namespace Pelmanism {
         public Color CloseColor { get; } = Color.LightSeaGreen;
 
         //コンストラクタ
-        public Card(string picture) {
+        public Card(Image picture) {
             Picture = picture;
             State = false;
             Size = new Size(SizeW, SizeH);
@@ -35,7 +35,7 @@ namespace Pelmanism {
         public void Open() {
             State = true;   //表
             BackColor = OpenColor;
-            Text = Picture;
+            Image = Picture;
             Enabled = false;    //選択不可
         }
 
@@ -43,7 +43,7 @@ namespace Pelmanism {
         public void Close() {
             State = false;   //表
             BackColor = CloseColor;
-            Text = "";
+            Image = null;
             Enabled = true;    //選択不可
         }
 

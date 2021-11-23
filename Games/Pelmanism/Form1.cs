@@ -13,7 +13,7 @@ namespace Pelmanism {
         private Card[] playingCards;    //遊ぶカードの束
         private Player player;          //プレイヤー
         private int gameSec;            //ゲーム時間
-        private int timelimit = 5;
+        private int timelimit = 60;
 
         public FormGame() {
             InitializeComponent();
@@ -24,9 +24,21 @@ namespace Pelmanism {
         /// </summary>
         /// <param name="cards">カード配列への参照</param>
         private void CreateCards(ref Card[] cards) {
-            string[] picture = {
-                "○","●","△","▲","□","■","◇","◆","☆","★","※","×"
+            Image[] picture = {
+                Image.FromFile(@"pictures/pic1.png"),
+                Image.FromFile(@"pictures/pic2.png"),
+                Image.FromFile(@"pictures/pic3.png"),
+                Image.FromFile(@"pictures/pic4.png"),
+                Image.FromFile(@"pictures/pic5.png"),
+                Image.FromFile(@"pictures/pic6.png"),
+                Image.FromFile(@"pictures/pic7.png"),
+                Image.FromFile(@"pictures/pic8.png"),
+                Image.FromFile(@"pictures/pic9.png"),
+                Image.FromFile(@"pictures/pic10.png"),
+                Image.FromFile(@"pictures/pic11.png"),
+                Image.FromFile(@"pictures/pic12.png"),
             };
+
             //カードのインスタンスの生成
             cards = new Card[picture.Length * 2];
             for (int i = 0, j = 0; i < cards.Length; i += 2, j++) {
@@ -125,7 +137,8 @@ namespace Pelmanism {
         /// <param name="nowOpenCardIndex2">2枚目にめくったカードの添え字</param>
         /// <returns>true：一致　false：不一致</returns>
         private bool MatchCard(Card[] cards, int Index1, int Index2) {
-            if (Index1 < 0 || Index1 > cards.Length || Index2 < 0 || Index2 > cards.Length) {
+            if (Index1 < 0 || Index1 >= cards.Length ||
+                Index2 < 0 || Index2 >= cards.Length) {
                 return false;
             }
 
@@ -174,9 +187,12 @@ namespace Pelmanism {
                 labelSec.Text = "残り" + timer + "秒";
             } else {
                 timer1.Stop();
-                labelGuidance.Text = "時間切れです。";
+                labelGuidance.Text = "Game Over";
                 labelSec.Text = "残り" + timer + "秒";
-                MessageBox.Show("時間切れです。");
+                buttonStart.Enabled = true;
+                foreach (var card in playingCards) {
+                    card.Enabled = false;
+                }
             }
         }
     }
