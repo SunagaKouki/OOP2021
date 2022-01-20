@@ -125,6 +125,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{82524B34
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pelmanism", "Games\Pelmanism\Pelmanism.csproj", "{C9F50B41-92B1-4AAA-B67C-DD72B5CA73A4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "卒業制作", "卒業制作", "{4C6DF56E-1B28-4F16-9A2E-E4A647CC4EA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryControl", "卒業制作\InventoryControl\InventoryControl.csproj", "{31B001B0-9F57-4945-8251-77734CEC9426}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -283,6 +287,10 @@ Global
 		{C9F50B41-92B1-4AAA-B67C-DD72B5CA73A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9F50B41-92B1-4AAA-B67C-DD72B5CA73A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9F50B41-92B1-4AAA-B67C-DD72B5CA73A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B001B0-9F57-4945-8251-77734CEC9426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B001B0-9F57-4945-8251-77734CEC9426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B001B0-9F57-4945-8251-77734CEC9426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B001B0-9F57-4945-8251-77734CEC9426}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -330,6 +338,7 @@ Global
 		{2EFC1057-B723-4E80-85BF-41DA9215F35B} = {E1B8AF51-DC96-4536-8582-F3919272C085}
 		{25E09627-AFD3-4363-B528-42CA0C674A7D} = {E1B8AF51-DC96-4536-8582-F3919272C085}
 		{C9F50B41-92B1-4AAA-B67C-DD72B5CA73A4} = {82524B34-4A0C-47B7-9F9A-5852F3DE6413}
+		{31B001B0-9F57-4945-8251-77734CEC9426} = {4C6DF56E-1B28-4F16-9A2E-E4A647CC4EA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F2E03A59-8123-41CE-9645-64573338AE21}
